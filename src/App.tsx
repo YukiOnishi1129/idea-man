@@ -1,31 +1,27 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React, { FC } from 'react'
 import styled from 'styled-components'
 
-export const Test = styled.div`
-  color: red;
+import RadioArea from './components/RadioArea'
+
+export const Wrapper = styled.div`
+  margin: 0 auto;
+  padding-top: 40px;
+  width: 60%;
+  box-sizing: border-box;
 `
 
-function App() {
+export const Title = styled.h1`
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+`
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <Test>test!!!</Test>
-      </header>
-    </div>
+    <Wrapper>
+      <Title>アイデアマン</Title>
+      <RadioArea />
+    </Wrapper>
   )
 }
 
