@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
 import styled from 'styled-components'
 import IdeaContext from './contexts'
+import { IdeaType } from 'idea'
 
 import RadioArea from './components/RadioArea'
 import ActionButton from './components/Button'
@@ -20,10 +21,7 @@ export const Title = styled.h1`
   text-align: center;
 `
 
-export const initailState: {
-  radio: boolean
-  data: string[]
-} = {
+export const initailState: IdeaType = {
   radio: true,
   data: ['猫', '庭', 'ストロー', '雨', '傘', 'マンション'],
 }
