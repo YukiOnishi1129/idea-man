@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
 import IdeaContext from '../contexts'
+import IdeaBox from './IdeaBox'
 
 export type TProps = {
   radio: boolean
@@ -11,19 +12,6 @@ export const Field = styled.div`
   justify-content: space-around;
   margin: 20px auto;
   width: ${({ radio }: TProps) => (radio ? '60%' : '90%')};
-`
-
-export const Box = styled.div`
-  width: ${({ radio }: TProps) => (radio ? '45%' : '30%')};
-  height: 200px;
-`
-export const Word = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: 1px solid;
-  background: #f5fffa;
 `
 
 export const MultiIcon = styled.div`
@@ -39,19 +27,13 @@ const IdeaArea: FC = () => {
   const { ideas } = useContext(IdeaContext)
   return (
     <Field radio={ideas.radio}>
-      <Box radio={ideas.radio}>
-        <Word />
-      </Box>
+      <IdeaBox />
       <MultiIcon>×</MultiIcon>
-      <Box radio={ideas.radio}>
-        <Word />
-      </Box>
+      <IdeaBox />
       {!ideas.radio && (
         <>
           <MultiIcon>×</MultiIcon>
-          <Box radio={ideas.radio}>
-            <Word />
-          </Box>
+          <IdeaBox />
         </>
       )}
     </Field>

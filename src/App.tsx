@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
   padding-top: 40px;
   width: 60%;
   box-sizing: border-box;
-  border: 1px solid;
 `
 
 export const Title = styled.h1`
