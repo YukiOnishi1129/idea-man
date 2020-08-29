@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import styled from 'styled-components'
 
 import RadioArea from './components/RadioArea'
+import ActionButton from './components/Button'
 
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -21,6 +22,7 @@ const App: FC = () => {
     <Wrapper>
       <Title>アイデアマン</Title>
       <RadioArea />
+      <ActionButton />
     </Wrapper>
   )
 }
