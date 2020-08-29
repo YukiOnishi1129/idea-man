@@ -1,6 +1,5 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import styled from 'styled-components'
-import RadioButton from './RadioButton'
 
 export const RadioDescription = styled.p`
   text-align: center;
@@ -11,15 +10,38 @@ export const ButtonArea = styled.div`
   display: flex;
   margin: 20px auto;
   width: 20%;
+
+  label {
+    cursor: pointer;
+    margin: 0 auto;
+    width: 60px;
+  }
 `
 
 const RadioArea: FC = () => {
+  const [radio, setRadio] = useState(true)
   return (
     <>
       <RadioDescription>何個組み合わせる？</RadioDescription>
       <ButtonArea>
-        <RadioButton num={2} />
-        <RadioButton num={3} />
+        <label>
+          <input
+            type="radio"
+            name="number"
+            checked={radio}
+            onChange={() => setRadio(true)}
+          />
+          <span>2個</span>
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="number"
+            checked={!radio}
+            onChange={() => setRadio(false)}
+          />
+          <span>3個</span>
+        </label>
       </ButtonArea>
     </>
   )
