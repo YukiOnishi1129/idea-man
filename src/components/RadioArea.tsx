@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
+import IdeaContext from '../contexts'
 
 export const RadioDescription = styled.p`
   text-align: center;
@@ -19,7 +20,7 @@ export const ButtonArea = styled.div`
 `
 
 const RadioArea: FC = () => {
-  const [radio, setRadio] = useState(true)
+  const { ideas, setIdeas } = useContext(IdeaContext)
   return (
     <>
       <RadioDescription>何個組み合わせる？</RadioDescription>
@@ -28,8 +29,8 @@ const RadioArea: FC = () => {
           <input
             type="radio"
             name="number"
-            checked={radio}
-            onChange={() => setRadio(true)}
+            checked={ideas.radio}
+            onChange={() => setIdeas({ ...ideas, radio: true })}
           />
           <span>2個</span>
         </label>
@@ -37,8 +38,8 @@ const RadioArea: FC = () => {
           <input
             type="radio"
             name="number"
-            checked={!radio}
-            onChange={() => setRadio(false)}
+            checked={!ideas.radio}
+            onChange={() => setIdeas({ ...ideas, radio: false })}
           />
           <span>3個</span>
         </label>
