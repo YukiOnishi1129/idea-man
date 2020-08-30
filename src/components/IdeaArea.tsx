@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
-import IdeaContext from '../contexts'
+import RadioContext from '../contexts/radio'
 import IdeaBox from './IdeaBox'
 
 export type TProps = {
@@ -24,13 +24,13 @@ export const MultiIcon = styled.div`
 `
 
 const IdeaArea: FC = () => {
-  const { ideas } = useContext(IdeaContext)
+  const { radio } = useContext(RadioContext)
   return (
-    <Field radio={ideas.radio}>
+    <Field radio={radio}>
       <IdeaBox />
       <MultiIcon>×</MultiIcon>
       <IdeaBox />
-      {!ideas.radio && (
+      {!radio && (
         <>
           <MultiIcon>×</MultiIcon>
           <IdeaBox />

@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
-import IdeaContext from '../contexts'
+import IdeaContext from '../contexts/idea'
+import RadioContext from '../contexts/radio'
 
 export type TProps = {
   radio: boolean
@@ -26,9 +27,10 @@ export const Word = styled.div`
 
 const IdeaBox: FC = () => {
   const { ideas } = useContext(IdeaContext)
+  const { radio } = useContext(RadioContext)
   return (
-    <Box radio={ideas.radio}>
-      <Word>{ideas.data[0]}</Word>
+    <Box radio={radio}>
+      <Word>{ideas[5]}</Word>
     </Box>
   )
 }
