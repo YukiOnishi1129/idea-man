@@ -23,12 +23,13 @@ const Provider: FC<ProviderProps> = ({ children }) => {
   !firebase.apps.length
     ? firebase.initializeApp(firebaseConfig)
     : firebase.app()
+
   const [ideas, setIdeas] = useState(initailIdeas)
   const [radio, setRadio] = useState(initailRadio)
   const [keywords, setKeywords] = useState(initailKeywords)
 
   useEffect(() => {
-    const func = async () => {
+    const getIdeas = async () => {
       await firebase
         .database()
         .ref('data/')
@@ -37,7 +38,7 @@ const Provider: FC<ProviderProps> = ({ children }) => {
           setIdeas(snapshot.val())
         })
     }
-    func()
+    getIdeas()
   }, [])
 
   return (

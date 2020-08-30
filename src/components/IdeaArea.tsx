@@ -12,7 +12,7 @@ export const Field = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 20px auto;
-  width: ${({ radio }: TProps) => (radio ? '60%' : '100%')};
+  width: ${({ radio }: TProps) => (radio ? '60%' : '90%')};
 `
 
 export const MultiIcon = styled.div`

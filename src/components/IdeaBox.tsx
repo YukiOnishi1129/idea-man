@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
 import RadioContext from '../contexts/radio'
+import { customMedia } from '../utils/style-utils'
 
 export type TProps = {
   radio: boolean
@@ -27,6 +28,9 @@ export const Word = styled.div`
     width: 100%;
     transform: translate(-50%, -50%);
     font-size: 24px;
+    ${customMedia.lessThan('mobile')`
+      font-size: 20px;
+    `}
     font-weight: bold;
     text-align: center;
   }

@@ -14,10 +14,20 @@ export const ButtonLabel = styled.label`
   height: 45px;
   line-height: 45px;
   border: 2px solid #006dd9;
-  background-color: ${({ radio }: TProps) => (radio ? '#E2EDF9;' : '')};
+  background-color: ${({ radio }: TProps) => (radio ? '#006dd9;' : '')};
+  transition: all 0.3s ease;
   border-radius: 5px;
   text-align: center;
-  color: #b20000;
+  color: ${({ radio }: TProps) => (radio ? '#f1f3de;' : '#b20000')};
+  font-size: 20px;
+  font-weight: bold;
+  user-select: none;
+
+  &:hover {
+    background-color: ${({ radio }: TProps) => (radio ? '' : '#006dd9')};
+    box-shadow: 2px 2px #668ad8;
+    color: #f1f3de;
+  }
 
   input[type='radio'] {
     display: none;

@@ -1,16 +1,18 @@
 import React, { FC } from 'react'
 import styled from 'styled-components'
-
 import Provider from './components/TotalProvider'
-
 import RadioArea from './components/RadioArea'
 import ActionButton from './components/Button'
 import IdeaArea from './components/IdeaArea'
+import { customMedia } from './utils/style-utils'
 
 export const Wrapper = styled.div`
   margin: 0 auto;
   padding-top: 40px;
-  width: 60%;
+  width: 70%;
+  ${customMedia.lessThan('mobile')`
+    width: 100%;
+  `}
   box-sizing: border-box;
 `
 
