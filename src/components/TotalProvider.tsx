@@ -38,7 +38,7 @@ const Provider: FC<ProviderProps> = ({ children }) => {
         })
     }
     func()
-  }, [ideas])
+  }, [])
 
   return (
     <IdeaProvider value={{ ideas, setIdeas }}>
