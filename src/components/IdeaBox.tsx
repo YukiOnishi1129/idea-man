@@ -1,6 +1,5 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
-import IdeaContext from '../contexts/idea'
 import RadioContext from '../contexts/radio'
 
 export type TProps = {
@@ -25,12 +24,11 @@ export const Word = styled.div`
   text-align: center;
 `
 
-const IdeaBox: FC = () => {
-  const { ideas } = useContext(IdeaContext)
+const IdeaBox: FC<{ word: string }> = ({ word }) => {
   const { radio } = useContext(RadioContext)
   return (
     <Box radio={radio}>
-      <Word>{ideas[5]}</Word>
+      <Word>{word}</Word>
     </Box>
   )
 }
