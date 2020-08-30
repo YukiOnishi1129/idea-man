@@ -1,12 +1,12 @@
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  apiKey: 'AIzaSyA_YH_ZoNbN9Q8XlhALN1EkQthMhJadNvM',
+  authDomain: 'idea-man-4c733.firebaseapp.com',
+  databaseURL: 'https://idea-man-4c733.firebaseio.com',
+  projectId: 'idea-man-4c733',
+  storageBucket: 'idea-man-4c733.appspot.com',
+  messagingSenderId: '65398987419',
+  appId: '1:65398987419:web:e2aa962553d54595b3043e',
+  measurementId: 'G-YJ4G4VJHJB',
 }
 
 export default firebaseConfig
