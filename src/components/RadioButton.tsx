@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
-import IdeaContext from '../contexts'
+import RadioContext from '../contexts/radio'
 
 export type TProps = {
   radio: boolean
@@ -25,18 +25,18 @@ export const ButtonLabel = styled.label`
 `
 
 const RadioButton: FC<{ num: number }> = ({ num }) => {
-  const { ideas, setIdeas } = useContext(IdeaContext)
+  const { radio, setRadio } = useContext(RadioContext)
   const changeRadio = num === 2 ? true : false
-  const currentChecked = num === 2 ? ideas.radio : !ideas.radio
+  const currentChecked = num === 2 ? radio : !radio
   const propsRadio =
-    (num === 2 && ideas.radio) || (num === 3 && !ideas.radio) ? true : false
+    (num === 2 && radio) || (num === 3 && !radio) ? true : false
   return (
     <ButtonLabel radio={propsRadio}>
       <input
         type="radio"
         name="number"
         checked={currentChecked}
-        onChange={() => setIdeas({ ...ideas, radio: changeRadio })}
+        onChange={() => setRadio(changeRadio)}
       />
       <span>{num}個</span>
     </ButtonLabel>

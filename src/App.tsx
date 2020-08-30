@@ -1,7 +1,7 @@
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components'
-import IdeaContext from './contexts'
-import { IdeaType } from 'idea'
+
+import Provider from './components/TotalProvider'
 
 import RadioArea from './components/RadioArea'
 import ActionButton from './components/Button'
@@ -20,23 +20,16 @@ export const Title = styled.h1`
   text-align: center;
 `
 
-export const initailState: IdeaType = {
-  radio: true,
-  data: ['猫', '庭', 'ストロー', '雨', '傘', 'マンション'],
-}
-
 const App: FC = () => {
-  const [ideas, setIdeas] = useState(initailState)
-  console.log(ideas)
   return (
-    <IdeaContext.Provider value={{ ideas, setIdeas }}>
+    <Provider>
       <Wrapper>
         <Title>アイデアマン</Title>
         <RadioArea />
         <ActionButton />
         <IdeaArea />
       </Wrapper>
-    </IdeaContext.Provider>
+    </Provider>
   )
 }
 

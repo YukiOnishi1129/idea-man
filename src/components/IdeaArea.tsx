@@ -1,6 +1,7 @@
 import React, { FC, useContext } from 'react'
 import styled from 'styled-components'
-import IdeaContext from '../contexts'
+import RadioContext from '../contexts/radio'
+import KeywordContext from '../contexts/keyword'
 import IdeaBox from './IdeaBox'
 
 export type TProps = {
@@ -11,7 +12,7 @@ export const Field = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 20px auto;
-  width: ${({ radio }: TProps) => (radio ? '60%' : '90%')};
+  width: ${({ radio }: TProps) => (radio ? '60%' : '100%')};
 `
 
 export const MultiIcon = styled.div`
@@ -24,16 +25,17 @@ export const MultiIcon = styled.div`
 `
 
 const IdeaArea: FC = () => {
-  const { ideas } = useContext(IdeaContext)
+  const { radio } = useContext(RadioContext)
+  const { keywords } = useContext(KeywordContext)
   return (
-    <Field radio={ideas.radio}>
-      <IdeaBox />
+    <Field radio={radio}>
+      <IdeaBox word={keywords[0]} />
       <MultiIcon>×</MultiIcon>
-      <IdeaBox />
-      {!ideas.radio && (
+      <IdeaBox word={keywords[1]} />
+      {!radio && (
         <>
           <MultiIcon>×</MultiIcon>
-          <IdeaBox />
+          <IdeaBox word={keywords[2]} />
         </>
       )}
     </Field>
