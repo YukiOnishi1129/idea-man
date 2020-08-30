@@ -22,7 +22,15 @@ export const Title = styled.h1`
 
 export const initailState: IdeaType = {
   radio: true,
-  data: ['猫', '庭', 'ストロー', '雨', '傘', 'マンション'],
+  data: [
+    '猫',
+    '庭',
+    'ストロー',
+    '雨',
+    '傘',
+    'マンション',
+    'シンクロナイズドスイミング',
+  ],
 }
 
 const App: FC = () => {
